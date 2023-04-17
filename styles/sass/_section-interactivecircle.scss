@@ -1,0 +1,102 @@
+.section-interactivecircle{
+    flex-direction: column;
+    text-align: left;
+    font-size: 1.25rem;
+    
+    p{
+        color: $text-secondary-color;
+        margin-bottom: 70px;
+        max-width: 944px;
+    }
+    
+    .interactive-circle{
+        position: relative;
+        margin-bottom: 8px;
+    }
+    
+    .circle-content{
+        transition: all 0.5s ease-in-out;
+        @include box(335px, 335px);
+        display: flex;
+        text-align: center;
+        background-color: $alternative-color;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.625rem;
+        color: black;
+        top: 50%;
+        left: 50%;
+        border-radius: 50%;
+        border-style: solid;
+        border-color: black;
+        z-index: 99;
+        transform: translate(-50%, -50%);
+      
+    }
+
+    .interactive-button{
+        position: absolute;
+        @include box(54px,54px);
+        border-radius: 50%;
+        border-style: none;
+        background-color: $secondary-color;
+        background-image: url('../../assets/icones/icon-plus.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        
+        &.yellow{
+            top: 15%;
+            left: 50%;
+            transform: translate(-50%,0);
+        }
+        &.red{
+            bottom: 15%;
+            left: 3%;
+            transform: translate(50%,0);
+
+        }
+        &.gray{
+            bottom: 15%;
+            right: 12.5%;
+            transform: translate(50%,0);
+
+        }
+
+        &.active{
+            background-color: $primary-color;
+            background-image: url('../../assets/icones/icon-minos.svg');
+        }
+        &:hover{
+            background-color: $primary-color;
+        }
+
+    }
+
+
+    @include devices(tablet){
+        p{
+            margin-top: 0;
+            margin-bottom: 40px;
+        }
+        .interactive-button{
+            @include box(30px,30px);
+        }
+        .interactive-circle{
+            object{
+                width: 340px;
+                height: 347px;
+            }
+        }
+        .circle-content{
+            font-size: 0.875rem; 
+            @include box(178px, 178px);
+        }
+    }
+    @include devices(mobile){
+        p{
+            max-width: 320px;
+            font-size: 1rem;
+        }
+    }
+}

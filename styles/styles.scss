@@ -1,0 +1,31 @@
+@import './sass/variables';
+@import './sass/mixins';
+@import './sass/header';
+@import './sass/footer';
+@import './sass/section-first';
+@import './sass/section-dropdown';
+@import './sass/section-third';
+@import './sass/section-interactivecircle';
+
+
+body{
+    max-width: 100vw;
+    @include push--auto;
+    font-family: $font-primary;
+    overflow-x: hidden;
+}
+
+section{
+    padding: 70px 10% 5% 10%;
+    @include flex-center;
+    position: relative;
+    line-height: 24px;
+
+    @include devices(mobile){
+        overflow: clip;
+        flex-direction: column;
+        font-size: 1rem;
+        line-height: 22px;
+    }
+}
+

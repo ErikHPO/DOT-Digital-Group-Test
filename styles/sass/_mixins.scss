@@ -1,0 +1,49 @@
+@mixin flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@mixin box($width, $height: $width) {
+    width: $width;
+    height: $height;
+  }
+@mixin min-boxsize($width, $height: $width) {
+    min-width: $width;
+    min-height: $height;
+  }
+
+
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+    content: $content;
+    display: $display;
+    position: $pos;
+}
+
+@mixin push--auto {
+    margin: { 
+        top: 0;
+        bottom: 0;
+        left: auto;
+        right: auto;
+    }
+}
+
+@mixin devices ($breakpoint) { 
+  
+    @if $breakpoint == tablet {    
+    @media only screen and (max-width: 1024px) {
+      @content;
+    }
+  }
+ 
+  @if $breakpoint == mobile {
+    @media only screen and (max-width: 481px) {
+      @content;
+    }
+  }
+
+  
+}
+
